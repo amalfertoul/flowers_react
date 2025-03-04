@@ -20,7 +20,6 @@ const CartComponent = () => {
           </li>
         ))}
       </ul>
-      <button onClick={() => dispatch(addToCart({ id: 1, name: "Sample Item", quantity: 1 }))}>Add Sample Item</button>
     </div>
   );
 };

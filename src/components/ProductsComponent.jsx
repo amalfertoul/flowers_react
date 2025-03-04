@@ -27,6 +27,7 @@ const ProductsComponent = () => {
         {items.map(product => (
           <li key={product.id}>
             {product.name} <button onClick={() => dispatch(deleteProduct(product.id))}>Delete</button>
+
           </li>
         ))}
       </ul>
