@@ -6,7 +6,7 @@ import ordersReducer from "./slices/ordersSlice";
 import reviewsReducer from "./slices/reviewsSlice";
 import usersReducer from "./slices/usersSlice";
 import authReducer from "./slices/authSlice";
-
+import flowersDiskReducer from "./slices/flowersdiskSlice"; 
 
 const store = configureStore({
   reducer: {
@@ -17,6 +17,7 @@ const store = configureStore({
     orders: ordersReducer,
     reviews: reviewsReducer,
     users: usersReducer,
+    flowersDisk: flowersDiskReducer,
   },
 });
 

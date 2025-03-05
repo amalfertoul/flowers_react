@@ -7,6 +7,7 @@ import OrdersComponent from "./OrdersComponent";
 import ReviewForm from "./ReviewForm";
 import ReviewList from "./ReviewList";
 import UsersComponent from "./UsersComponent";
+import FlowersDiskComponent from "./FlowersDiskComponent";
 import Logout from "./Logout";
 
 const Dashboard = () => {
@@ -30,6 +31,7 @@ const Dashboard = () => {
             <ReviewForm editingReview={editingReview} setEditingReview={setEditingReview} />
             <ReviewList setEditingReview={setEditingReview} />           
             <UsersComponent />
+            <FlowersDiskComponent />
           </div>
         </>
       ) : (
