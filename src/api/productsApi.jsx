@@ -45,14 +45,26 @@ export const addProductApi = async (product) => {
     const headers = getAuthHeader();
     if (!headers) return null;
 
+    const formData = new FormData();
+    formData.append("name", product.name);
+    formData.append("price", product.price);
+    formData.append("stock", product.stock);
+    formData.append("image", product.image); // File
+
     try {
-        const response = await axios.post(API_URL, product, { headers });
+        const response = await axios.post(API_URL, formData, {
+            headers: {
+                ...headers,
+                "Content-Type": "multipart/form-data", // Important for file upload
+            },
+        });
         return response.data;
     } catch (error) {
         console.error("Error adding product:", error.response?.data || error.message);
         return null;
     }
 };
+
 
 // Delete a product
 export const deleteProductApi = async (id) => {

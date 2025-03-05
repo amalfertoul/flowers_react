@@ -24,11 +24,7 @@ export const loginUser = createAsyncThunk("auth/loginUser", async ({ email, pass
 
 // Logout function
 export const logoutUser = createAsyncThunk("auth/logoutUser", async (_, { rejectWithValue }) => {
-//   try {
-    localStorage.removeItem("user"); // Remove user info
-//   } catch (error) {
-//     return rejectWithValue(error.response?.data || { message: "Logout failed" });
-//   }
+    localStorage.removeItem("user"); 
 });
 
 const authSlice = createSlice({

@@ -12,7 +12,7 @@ const getAuthHeader = () => {
     return { Authorization: `Bearer ${token}` };
 };
 
-// Fetch all reviews
+
 export const fetchReviewsApi = async () => {
     const headers = getAuthHeader();
     if (!headers) return null; // Prevent unauthorized requests
@@ -22,12 +22,11 @@ export const fetchReviewsApi = async () => {
         return response.data;
     } catch (error) {
         console.error("Error fetching reviews:", error.response?.data || error.message);
-        return []; // Return an empty array instead of null to prevent map() errors
+        return []; 
     }
 };
 
 
-// Get a single review
 export const getReviewApi = async (id) => {
     try {
         const response = await axios.get(`${API_URL}/${id}`);
@@ -38,7 +37,6 @@ export const getReviewApi = async (id) => {
     }
 };
 
-// Add a new review (with authentication)
 export const addReviewApi = async (review) => {
     const headers = getAuthHeader();
     if (!headers) return null;
@@ -52,21 +50,20 @@ export const addReviewApi = async (review) => {
     }
 };
 
-// Update a review (with authentication)
-export const updateReviewApi = async (id, review) => {
+export const updateReviewApi = async (payload) => { 
     const headers = getAuthHeader();
     if (!headers) return null;
-
+  
     try {
-        const response = await axios.put(`${API_URL}/${id}`, review, { headers });
-        return response.data;
+      const response = await axios.put(`${API_URL}/${payload.id}`, payload.review, { headers });
+      return response.data;
     } catch (error) {
-        console.error(`Error updating review with ID ${id}:`, error.response?.data || error.message);
-        return null;
+      console.error(`Error updating review with ID ${payload.id}:`, error.response?.data || error.message);
+      return null;
     }
 };
 
-// Delete a review (with authentication)
+
 export const deleteReviewApi = async (id) => {
     const headers = getAuthHeader();
     if (!headers) return null;

@@ -2,7 +2,6 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8000/api/users";
 
-// Function to get auth headers
 const getAuthHeader = () => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -12,7 +11,6 @@ const getAuthHeader = () => {
     return { Authorization: `Bearer ${token}` };
 };
 
-// Fetch all users
 export const fetchUsersApi = async () => {
     const headers = getAuthHeader();
     if (!headers) return null; // Prevent unauthorized requests
@@ -26,7 +24,7 @@ export const fetchUsersApi = async () => {
     }
 };
 
-// Add a new user
+
 export const addUserApi = async (user) => {
     const headers = getAuthHeader();
     if (!headers) return null;
@@ -40,7 +38,7 @@ export const addUserApi = async (user) => {
     }
 };
 
-// Delete user
+
 export const deleteUserApi = async (id) => {
     const headers = getAuthHeader();
     if (!headers) return null;

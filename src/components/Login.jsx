@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser({ email, password })).then((result) => {
-      console.log("User after login:", result.payload); // ✅ Debugging
+      console.log("User after login:", result.payload); // Debugging
     });
   };
   

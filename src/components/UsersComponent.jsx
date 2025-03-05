@@ -16,7 +16,7 @@ const UsersComponent = () => {
       <ul>
         {items.map(user => (
           <li key={user.id}>
-            {user.name} <button onClick={() => dispatch(deleteUser(user.id))}>Delete</button>
+            {user.fullname} <button onClick={() => dispatch(deleteUser(user.id))}>Delete</button>
           </li>
         ))}
       </ul>

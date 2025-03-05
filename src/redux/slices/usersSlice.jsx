@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchUsersApi, addUserApi, deleteUserApi } from "../../api/usersApi";
 
-// Async actions
 export const fetchUsers = createAsyncThunk("users/fetchAll", fetchUsersApi);
 export const addUser = createAsyncThunk("users/add", addUserApi);
 export const deleteUser = createAsyncThunk("users/delete", deleteUserApi);
